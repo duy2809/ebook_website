@@ -1,27 +1,6 @@
 <% if user_signed_in? %>
     <h2>Hello, user 👋 </h2>
     <h2>Welcome to homepage 🏠 </h2>
-    <img src="/images/devise_logo.png"><br/><br/>
-    <h5>Devise is a flexible authentication solution for Rails based on Warden. It:</h5>
-    <ul>
-        <li>Is Rack based</li>
-        <li>Is a complete MVC solution based on Rails engines</li>
-        <li>Allows you to have multiple models signed in at the same time</li>
-        <li>Is based on a modularity concept: use only what you really need</li>
-    </ul>
-    <h5>It's composed of 10 modules:</h5>
-    <ul>
-        <li>Database Authenticatable: hashes and stores a password in the database to validate the authenticity of a user while signing in. The authentication can be done both through POST requests or HTTP Basic Authentication.</li>
-        <li>Omniauthable: adds OmniAuth (https://github.com/omniauth/omniauth) support.</li>
-        <li>Confirmable: sends emails with confirmation instructions and verifies whether an account is already confirmed during sign in.</li>
-        <li>Recoverable: resets the user password and sends reset instructions.</li>
-        <li>Registerable: handles signing up users through a registration process, also allowing them to edit and destroy their account.</li>
-        <li>Rememberable: manages generating and clearing a token for remembering the user from a saved cookie.</li>
-        <li>Trackable: tracks sign in count, timestamps and IP address.</li>
-        <li>Timeoutable: expires sessions that have not been active in a specified period of time.</li>
-        <li>Validatable: provides validations of email and password. It's optional and can be customized, so you're able to define your own validations.</li>
-        <li>Lockable: locks an account after a specified number of failed sign-in attempts. Can unlock via email or after a specified time period.</li>
-    </ul>
 <% else %>
     <h2>Please sign in or sign up to use this app 🔐</h2>
 <% end %>
