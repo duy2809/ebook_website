@@ -27,7 +27,7 @@
         <% end %>
       </ul>
       <% if user_signed_in? %>
-        <p style="color: white" class="m-1 me-3">Hello, <%= current_user.name %></p>
+        <%= link_to "Hello, #{current_user.name}", users_show_path, style: "color: white", class: "m-1 me-3 text-decoration-none" %>
       <% end %>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

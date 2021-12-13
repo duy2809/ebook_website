@@ -17,6 +17,11 @@
       </div> 
 
       <div class="field form-group">
+        <% f.label :avatar %>
+        <%= f.file_field :avatar, class: 'form-control' %><br>
+      </div>
+
+      <div class="field form-group">
         <% f.label :email %>
         <%= f.email_field :email, autocomplete: "email", class: 'form-control', placeholder: 'Email' %>
       </div>
