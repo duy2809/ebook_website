@@ -1,9 +1,7 @@
 <div class="d-flex">
-  <div>
-    <% if @book.image.attached? %>
-      <%= image_tag @book.image, height: 350 %>
-    <% end %>
-  </div>
+  <% if @book.image.attached? %>
+    <%= image_tag @book.image, style: "object-fit: cover;  height:350px; box-shadow: 5px 10px 8px #888888;"%>
+  <% end %>
   <div class="ms-5 w-100">
     <h2>
       <%= @book.title %>

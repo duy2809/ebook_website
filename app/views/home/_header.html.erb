@@ -12,10 +12,7 @@
         </li>
         <%if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to 'Edit profile', edit_user_registration_path, class:"nav-link #{'active' if current_page?(edit_user_registration_path)}"%>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', class:"nav-link"%>
+            <%= link_to 'Books', books_path, class:"nav-link #{'active' if current_page?(books_path)}"%>
           </li>
         <% else %>
           <li class="nav-item">
@@ -27,7 +24,17 @@
         <% end %>
       </ul>
       <% if user_signed_in? %>
-        <%= link_to "Hello, #{current_user.name}", users_show_path, style: "color: white", class: "m-1 me-3 text-decoration-none" %>
+      <ul class="navbar-nav me-3">
+        <li class="nav-item dropdown">
+          <%= link_to "Hello, #{current_user.name}", users_show_path, style: "color: white", class: "text-decoration-none nav-link dropdown-toggle", id: "navbarDropdown", role:"button", "data-toggle" => "dropdown", "aria-haspopup" => true, "aria-expanded" => false %>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "Profile", users_show_path, class: "dropdown-item" %>
+          <%= link_to 'Edit profile', edit_user_registration_path, class:"dropdown-item" %>
+          <div class="dropdown-divider"></div>
+          <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', class:"dropdown-item" %>
+          </div>
+        </li>
+      </ul>
       <% end %>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
