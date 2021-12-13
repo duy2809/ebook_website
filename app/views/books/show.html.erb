@@ -17,7 +17,15 @@
       <%= @book.detail %>
     <p>
 
-    <p><strong>Review:</strong><p>
+    <p><strong>Review list:</strong><p>
+    <ul>
+      <% @book.book_review.each do |book_review|%>
+      <li><%= book_review.review %>
+        (<i><%= book_review.user_id %></i>)</li>
+      <% end %>
+    </ul>
+
+    <p><strong>Your review:</strong><p>
     <%= form_with(model: @book_review, local: true) do |form| %>
       <div class= "field form-group">
         <%= form.text_area :review, class: 'form-control', placeholder: 'Write your review here ... ' %>
@@ -29,6 +37,7 @@
       </div>
       <br/>
     <% end %>
+
     <%= link_to 'Edit', edit_book_path(@book), class: "btn btn-primary" %>
     <%= link_to 'Back', books_path, class: "btn btn-secondary" %>
   </div>
