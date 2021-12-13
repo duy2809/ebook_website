@@ -1,6 +1,7 @@
 <% if user_signed_in? %>
-    <h2>Hello, user 👋 </h2>
-    <h2>Welcome to homepage 🏠 </h2>
+    <h1>Homepage 🏠 </h1>
+    <br/>
+    <%= link_to 'Click here to see list book', books_path, class:"btn btn-primary"%>
 <% else %>
     <h2>Please sign in or sign up to use this app 🔐</h2>
 <% end %>
